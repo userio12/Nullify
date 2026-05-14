@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nullify</string>
+    <string name="accessibility_service_description">Nullify uses accessibility service to navigate app settings and clear cache for you. No data is collected or transmitted.</string>
+</resources>
