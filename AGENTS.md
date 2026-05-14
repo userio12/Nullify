@@ -8,7 +8,7 @@
 ./gradlew clean                  # delete build/ output
 ```
 
-- AGP `8.11.0`, Kotlin `1.9.22`, Gradle `8.14.3`, JDK 17, Compose compiler `1.5.10`.
+- AGP `8.11.0`, Kotlin `2.0.21`, Gradle `8.14.3`, JDK 17. Compose compiler managed by `org.jetbrains.kotlin.plugin.compose`.
 - Version catalog: `gradle/libs.versions.toml` — use version refs, never hardcode.
 - KSP is enabled for Room annotation processing.
 - Release signing via `release.properties` + `release.keystore` (both committed — credentials plaintext).
@@ -37,7 +37,7 @@
 
 ## Important Constraints
 
-- **resolutionStrategy.force()** in `app/build.gradle.kts` pins specific Kotlin stdlib (1.9.22) and AndroidX versions. When adding new deps, ensure compatibility with these forced versions.
+- **resolutionStrategy.force()** in `app/build.gradle.kts` pins specific Kotlin stdlib (2.0.21) and AndroidX versions. When adding new deps, ensure compatibility with these forced versions.
 - **Packaging pickFirsts/merges** configured for KMP metadata conflicts. Extend these lists if duplicate file errors appear when adding KMP-transitive deps.
 - **Kotlin stdlib** dependency explicitly excludes `kotlin-stdlib-jdk7` and `kotlin-stdlib-jdk8` to avoid version conflicts.
 - **No `.gitignore` at root** — only `app/.gitignore` exists. Root-level generated files may get committed.
